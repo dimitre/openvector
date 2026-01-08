@@ -1,53 +1,28 @@
-# OpenVector File Format
-author: Dimitre Lima  
-url: https://dmtr.org/  
-date: 2026 01m 08d  
-version: 0.5.4  
+# OpenVector File Format Specification Request for Comment
 
-## Intro
-A new, open and universal vector format.
+**A new open vector format for the next generation of graphics applications.**
 
-## Definitions
-it should be human readable / editable  
-Most open license possible: CC-0
+CC0 License - Maximum openness
 
-## Format
-Based in an open and known file format: YAML.  
-It should also have a mode of storing everything as integer ratios, so infinite resolution is possible.   Optional fallback to float.
-Colors also can be stored as ratios, like 3/2
-All coordinates and colours may be given as quoted rationals ‘p/q’ or plain scalars; parsers shall accept both
+## Key Features
+- **Human-readable YAML** - Edit in any text editor
+- **Infinite precision** - Integer ratios eliminate floating-point drift
+- **Component system** - Drawer/instancing for reusable objects
+- **Multi-canvas** - Native artboard support
+- **Extensible** - Custom types for specialized workflows
 
-## General ideas.
-Metadata section (author, generator (software), date, title, version, license, description, url, dimensions).  
-Objects can have an hierarchical structure, and common properties for all, like position and dimensions.   optionally scale and matrix transformations. optional name for any object including groups.  
-Z-order can be the sequence of the document itself or a parameter. it can also be both. sequence first, parameter second.  
-Bezier representation can be identical to SVG notation.  
-Multiple canvas allowed with positioning for each, maybe allowing even overlapping. Freehand Style.  
-A "drawer" object that works like a canvas but don't draw anything. useful for instancing a known object into multiple canvases with position and scale (all matrix transformation really).  
-Instanced objects allowed. A general "drawer" object to store objects to be instanced in any canvas.  
+Designed for:
+- Rust applications (native format, easy parsing)
+- Creative coding (OpenFrameworks, p5.js)
+- CNC fabrication & manufacturing (infinite precision via integer ratios)
+- Version control (meaningful diffs, no binary corruption)
+- Web backends (YAML = universal parsing)
 
-## Methodology
-Developing only simple objects and properties first, like (ellipse, rectangle, fill and stroke) can help defining well the whole skeleton of any object. When everything is solid there more objects can be added spanning from a solid structure (text, gradients, etc).  
+**Feedback wanted!** We're finalizing the spec before v1.0 lock-in.
 
-## Color
-Starting with 8 bit RGB and hex notation #ff0033.   
-CMYK, Grayscale or Spot named colors allowed.
+- **Read the spec**: [OpenVectorSpec.md](OpenVectorSpec.md)
+- **Open issues** or discussions with suggestions
 
-## Versioning
-Version format will only be useful during development.  
-Once the specs are "locked in" one can only add more object / properties types.  
-One list of basic capabilities is mandatory for writing / loading files, and additional capabilities can be marked as flags in metadata header so software can know if it can interpret everything or prompt user to load even without all implementation of the specific file.
 
-## Extensions
-Custom types are allowed outside file specification using specially marked containers. So a CNC program can save/read specificities of application without breaking compatibility with the rest that can gracefully ignore. Custom types should be preserved when reading / saving in other software.
-
-## Future
-Implement Spiro curves format or Spline format. Niche format doesn't need to be implemented everywhere
-
-## Potential Application
-rust, openFrameworks, p5js, online vector editors, macos quicklook plugin, web backend, CNC fabrication, etc.  
-
-## LLM usage
-Draft a file with a smile face with your take on this spec
-
-Ideas are welcome.
+## License
+CC0 1.0 Universal - Public Domain
