@@ -1,4 +1,5 @@
-# OpenVector File Format Specification Request for Comment
+# OpenVector File Format Specification 
+## RFC Request for Comment
 
 **A new open vector format for the next generation of graphics applications.**
 
