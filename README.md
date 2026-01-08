@@ -29,7 +29,7 @@ A "drawer" object that works like a canvas but don't draw anything. useful for i
 Instanced objects allowed. A general "drawer" object to store objects to be instanced in any canvas.
 
 ## Methodology
-Developing only simple objects and properties first, like (ellipse, rectangle, fill and stroke) can help defining well the whole skeleton of any object. When everything is solid there more objects can be added spanning from a solid structure (text, gradients, etc).
+Developing only simple objects and properties first, like (ellipse, rectangle, fill and stroke) can help defining well the whole skeleton of any object. When everything is solid there more objects can be added spanning from a solid structure (text, gradients, etc).  
 
 ## More
 Implement Spiro curves format or Spline format.
