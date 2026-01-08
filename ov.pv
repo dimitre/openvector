@@ -1,0 +1,26 @@
+from plotdevice import *
+
+canvas = 1024
+margin  = canvas // 8
+size(canvas, canvas)
+background(0)
+stroke(1)
+strokewidth(40)
+
+d = canvas - 2 * margin
+oval(margin, margin, d, d)
+
+# flipped V: apex down, base up
+base_y = margin + d * 0.25            # 1/4 from top
+left   = margin + d * 0.375
+right  = margin + d * 0.625
+apex   = margin + d * 0.75            # 3/4 down
+
+translate(0, -200)
+scale(1.2)
+beginpath(left, base_y)
+lineto(margin + d*0.5, apex)
+lineto(right, base_y)
+endpath(close=False)
+
+export("ov.png")

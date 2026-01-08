@@ -38,7 +38,7 @@ Version format will only be useful during development.
 Once the specs are "locked in" one can only add more object / properties types.  
 One list of basic capabilities is mandatory for writing / loading files, and additional capabilities can be marked as flags in metadata header so software can know if it can interpret everything or prompt user to load even without all implementation of the specific file.
 
-## Extensions
+## Extensibility
 Custom types are allowed outside file specification using specially marked containers. So a CNC program can save/read specificities of application without breaking compatibility with the rest that can gracefully ignore. Custom types should be preserved when reading / saving in other software.
 
 ## Future
